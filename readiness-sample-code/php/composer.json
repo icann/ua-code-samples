@@ -1,0 +1,26 @@
+{
+    "name": "universal-acceptance/ua-readiness",
+    "description": "PHP sample codes for Universal Acceptance",
+    "keywords": [
+        "universal acceptance",
+        "UA",
+        "EAI",
+        "IDN",
+        "IDNA 2008"
+    ],
+    "autoload": {
+        "psr-4": {
+            "UAReadiness\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.2.5 || ^8.0",
+        "ext-curl": "*",
+        "ext-intl": "*",
+        "guzzlehttp/guzzle": "^7.3",
+        "symfony/http-client": "^5.3",
+        "symfony/mailer": "^5.3",
+        "phpmailer/phpmailer": "^6.5",
+        "egulias/email-validator": "^3.1"
+    }
+}
