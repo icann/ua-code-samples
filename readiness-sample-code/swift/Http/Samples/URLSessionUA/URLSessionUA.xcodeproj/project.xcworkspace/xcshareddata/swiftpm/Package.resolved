@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "IDNA-Cocoa",
+        "repositoryURL": "https://github.com/Wevah/IDNA-Cocoa",
+        "state": {
+          "branch": "master",
+          "revision": "870ba3ee80ca3555f7ee0da61189531441d10145",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
