@@ -1,0 +1,2 @@
+rootProject.name = "ua-readiness"
+include ':app'

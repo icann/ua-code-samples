@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".SmtpAppFragment">
+
+  <Button
+    android:id="@+id/smtpRequestButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="233dp"
+    android:layout_marginEnd="61dp"
+    android:text="@string/send_http_request"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="@+id/smtpTextViewError"
+    />
+  <EditText
+    android:id="@+id/smtpEditTextEmail"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:autofillHints="emailAddress"
+    android:ems="10"
+    android:hint="@string/email_address_hint"
+    android:inputType="textEmailAddress"
+    app:layout_constraintBottom_toTopOf="@+id/smtpLibSpinner"
+    app:layout_constraintStart_toStartOf="@+id/smtpLibSpinner"
+    />
+  <ProgressBar
+    android:id="@+id/smtp_progress_bar"
+    style="?android:attr/progressBarStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="40dp"
+    android:layout_x="182dp"
+    android:layout_y="202dp"
+    app:layout_constraintEnd_toStartOf="@+id/smtpRequestButton"
+    app:layout_constraintTop_toTopOf="@+id/smtpRequestButton"
+    />
+  <Spinner
+    android:id="@+id/smtpLibSpinner"
+    android:layout_width="209dp"
+    android:layout_height="60dp"
+    android:layout_marginTop="82dp"
+    android:layout_marginBottom="82dp"
+    app:layout_constraintBottom_toBottomOf="@+id/smtpEditTextSubject"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    />
+  <TextView
+    android:id="@+id/smtpTextViewError"
+    android:layout_width="0dp"
+    android:layout_height="133dp"
+    android:layout_marginTop="48dp"
+    android:layout_marginBottom="52dp"
+    android:layout_marginStart="43dp"
+    android:layout_marginEnd="43dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/smtpRequestButton"
+    />
+
+  <EditText
+      android:id="@+id/smtpEditTextSubject"
+      android:layout_width="223dp"
+      android:layout_height="47dp"
+      android:layout_marginTop="162dp"
+      android:autofillHints="no"
+      android:inputType="textEmailSubject"
+      android:text="@string/email_subject"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <EditText
+      android:id="@+id/smtpEditTextBody"
+      android:layout_width="225dp"
+      android:layout_height="179dp"
+      android:layout_marginStart="2dp"
+      android:layout_marginTop="78dp"
+      android:layout_marginEnd="2dp"
+      android:layout_marginBottom="93dp"
+      android:autofillHints="no"
+      android:inputType="textMultiLine"
+      android:text="@string/email_body"
+      app:layout_constraintBottom_toBottomOf="@+id/smtpRequestButton"
+      app:layout_constraintEnd_toEndOf="@+id/smtpEditTextSubject"
+      app:layout_constraintStart_toStartOf="@+id/smtpLibSpinner"
+      app:layout_constraintTop_toTopOf="@+id/smtpEditTextSubject" />
+</androidx.constraintlayout.widget.ConstraintLayout>

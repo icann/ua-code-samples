@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/nav_graph"
+  app:startDestination="@id/SelectAppFragment">
+
+  <fragment
+    android:id="@+id/SelectAppFragment"
+    android:label="@string/select_app_label"
+    android:name="org.icann.ua.readiness.android.SelectAppFragment"
+    tools:layout="@layout/fragment_select_app">
+
+    <action
+      android:id="@+id/action_SelectAppFragment_to_HttpAppFragment"
+      app:destination="@id/HttpAppFragment"/>
+    <action
+      android:id="@+id/action_SelectAppFragment_to_SmtpAppFragment"
+      app:destination="@id/SmtpAppFragment"/>
+  </fragment>
+  <fragment
+    android:id="@+id/HttpAppFragment"
+    android:label="@string/http_app_label"
+    android:name="org.icann.ua.readiness.android.HttpAppFragment"
+    tools:layout="@layout/fragment_http_app">
+
+    <action
+      android:id="@+id/action_BackToSelectApp"
+      app:destination="@id/SelectAppFragment"/>
+  </fragment>
+  <fragment
+    android:id="@+id/SmtpAppFragment"
+    android:label="@string/email_app_label"
+    android:name="org.icann.ua.readiness.android.SmtpAppFragment"
+    tools:layout="@layout/fragment_smtp_app">
+
+    <action
+      android:id="@+id/action_BackToSelectApp"
+      app:destination="@id/SelectAppFragment"/>
+  </fragment>
+</navigation>

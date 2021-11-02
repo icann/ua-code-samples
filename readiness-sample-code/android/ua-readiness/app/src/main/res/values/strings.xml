@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">UA Readiness</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="select_app_label">Select application</string>
+    <string name="http_app_label">UA compliant HTTP request</string>
+    <string name="goto_email_app">Validate email</string>
+    <string name="goto_http_app">Validate HTTP</string>
+    <string name="previous">Previous</string>
+    <string name="title">UA readiness sample</string>
+    <string name="url_placeholder">https://</string>
+    <string name="send_http_request">Send</string>
+    <string name="email_app_label">Send EAI compliant email</string>
+    <string name="email_address_hint">Email Address</string>
+    <string name="email_subject">EAI test email subject</string>
+    <string name="email_body">EAI test email body</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="smtp_header">SMTP Configuration</string>
+
+    <!-- SMTP Preferences -->
+    <string name="server_title">Server</string>
+    <string name="port_title">Port</string>
+    <string name="default_smtp_server">10.0.2.2</string>
+    <string name="default_smtp_port">25</string>
+
+</resources>
