@@ -5,8 +5,7 @@ namespace UAReadiness\Smtp\Samples;
 require_once __DIR__ . '/../../../vendor/autoload.php';
 
 use Symfony\Component\Mailer\Mailer;
-use Symfony\Component\Mailer\Transport\Smtp\SmtpTransport;
-use Symfony\Component\Mailer\Transport\Smtp\Stream\SocketStream;
+use Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
 use Symfony\Component\Mime\Email;
 use Throwable;
 use UAReadiness\Smtp\UAEmail;
@@ -26,12 +25,11 @@ class SymfonyMailerUAReadiness extends UAEmail
         // ourselves
         $converted_to = $this->convertEmailDomain(false);
 
-        $stream = new SocketStream();
-        $stream
-            ->setHost($this->host)
-            ->setPort($this->port)
-            ->disableTls();
-        $transport = new SmtpTransport($stream);
+        // Symfony accepts non-ASCII local part (from version 5.1) but does not implement SMTPUTF8
+        // extension, therefore any email address with non-ASCII local-part should lead to a server
+        // error
+
+        $transport = new EsmtpTransport($this->host, $this->port);
         $mailer = new Mailer($transport);
 
         try {
