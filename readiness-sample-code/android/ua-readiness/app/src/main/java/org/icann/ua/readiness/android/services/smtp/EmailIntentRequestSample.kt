@@ -9,7 +9,7 @@ import org.icann.ua.readiness.android.services.IDNAUtils
 /**
  * Send an email with Android Email Intent.
  *
- * This is not really sending an email bug delegating it to another application.
+ * This is not really sending an email but delegating it to another application.
  */
 class EmailIntentRequestSample(context: Context) : SmtpRequestSample(context) {
 

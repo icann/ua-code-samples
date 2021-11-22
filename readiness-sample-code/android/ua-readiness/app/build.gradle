@@ -55,7 +55,7 @@ dependencies {
     implementation 'com.android.volley:volley:1.2.1'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
-    api 'com.github.ok2c.hc5.android:httpclient-android:0.1.1'
+    implementation 'com.github.ok2c.hc5.android:httpclient-android:0.1.1'
     implementation 'com.sun.mail:jakarta.mail:2.0.1'
 
     testImplementation 'junit:junit:4.13.2'
