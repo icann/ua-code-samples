@@ -21,29 +21,25 @@ The UA conformance detailed results are breakdown by platforms:
 
 Here are the bug reports for each of the non-compliant tested libraries:
 
-- iOS
-  - Swift
-    - [MessageUI](https://stackoverflow.com/questions/69213585/mfmailcomposeviewcontroller-not-displaying-recipients-for-internationalized-emai)
-    - [URL in URLSession & Alamofire](https://stackoverflow.com/questions/69945768/swift-url-returns-nil-when-the-url-contains-an-internationalized-domain-name-id)
-- Windows
-  - PHP
-    - [mail](https://bugs.php.net/bug.php?id=81615)
-    - [cURL](https://bugs.php.net/bug.php?id=81616)
-- Linux & Windows
-  - PHP
-    - [intl](https://bugs.php.net/bug.php?id=81628)
-    - [PHP Mailer](https://github.com/PHPMailer/PHPMailer/issues/2563)
-    - [Symfony HttpClient](https://github.com/symfony/symfony/issues/44091)
-    - [Symfony Mailer IDN2008 compliance](https://github.com/symfony/symfony/issues/44092)
-    - [Symfony Mailer RFC5322](https://github.com/symfony/symfony/issues/44094)
-    - [Symfony Mailer RFC6531](https://github.com/symfony/symfony/issues/44136)
-- Android
-  - Kotlin
-    - [Jakarta Mail](https://github.com/eclipse-ee4j/mail/issues/589)
-    - [HttpUrlConnection (Android)](https://issuetracker.google.com/issues/206015971)
-    - [OkHttp](https://github.com/square/okhttp/issues/6910)
-    - [Fuel](https://github.com/kittinunf/fuel/issues/819)
-    - [Apache HttpClient](https://issues.apache.org/jira/browse/HTTPCLIENT-2185)
+| Language | Platform | Library | Report | Resolution |
+|---|---|---|---|---|
+| Swift | iOS | MessageUI | [StackOverflow report](https://stackoverflow.com/questions/69213585/mfmailcomposeviewcontroller-not-displaying-recipients-for-internationalized-emai) | No answer yet |
+| Swift | iOS | URLSession & Alamofire | [StackOverflow report](https://stackoverflow.com/questions/69945768/swift-url-returns-nil-when-the-url-contains-an-internationalized-domain-name-id) | Being discussed |
+| Swift | iOS | URLSession & Alamofire | [Bug report on Swift bugtracker](https://bugs.swift.org/browse/SR-15487) | Assigned to a maintainer |
+| PHP | Windows | mail | [Bug report on RFC6531 compliance](https://bugs.php.net/bug.php?id=81615) | Changed to feature request. Few chances that it would be implemented |
+| PHP | Windows | cURL | [Bug report on IDNA 2008 compliance](https://bugs.php.net/bug.php?id=81616) | This is a Windows issue |
+| PHP | Windows & Linux | intl | [Bug report on IDNA 2008 compliance](https://bugs.php.net/bug.php?id=81628) | This is a ICU issue |
+| PHP | Windows & Linux | PHP Mailer  | [Bug report for IDNA 2008 compliance](https://github.com/PHPMailer/PHPMailer/issues/2563) | Pull request submitted and merged upstream |
+| PHP | Windows & Linux | Symfony HttpClient  | [Bug report on IDNA 2008 compliance](https://github.com/symfony/symfony/issues/44091)  | Pull request submitted and merged upstream |
+| PHP | Windows & Linux | Symfony Mailer  | [Bug report on IDNA 2008 compliance](https://github.com/symfony/symfony/issues/44092) | Pull request submitted and merged upstream |
+| PHP | Windows & Linux | Symfony Mailer  | [Bug report on RFC5322 compliance](https://github.com/symfony/symfony/issues/44094) | Being discussed |
+| PHP | Windows & Linux | Symfony Mailer  | [Bug report on RFC6531 compliance](https://github.com/symfony/symfony/issues/44136) | No answer yet |
+| Kotlin | Android | Jakarta Mail | [Bug report on RFC6531 compliance](https://github.com/eclipse-ee4j/mail/issues/589) | No answer yet |
+| Kotlin | Android | HttpUrlConnection | [Bug report on IDNA 2008 compliance](https://issuetracker.google.com/issues/206015971) | Transmitted to the engineering teams |
+| Kotlin | Android | OkHttp | [Bug report on IDNA 2008 compliance](https://github.com/square/okhttp/issues/6910) | Closed after Q&A as IDNA 2008 is not uniformly supported or implemented by clients and servers |
+| Kotlin | Android | Fuel | [Bug report on IDNA 2008 compliance](https://github.com/kittinunf/fuel/issues/819) | Pull request submitted and pending to be merged upstream |
+| Kotlin | Android | Apache HttpClient | [Apache HttpClient](https://issues.apache.org/jira/browse/HTTPCLIENT-2185) | No answer yet |
+
 
 ### iOS note
 
@@ -54,8 +50,8 @@ The bug is registered at both place: stackoverflow & Feedback Assistant for the 
 
 ![Feedback Assistant's screenshot](messageui_bug_report.png)
 
-For URLSession & Alamofire, the bug seems to comes from the open-source version of the Foundation framework. 
-We thus log the bug also on the Swift open-source bug tracker: https://bugs.swift.org/browse/SR-15487
+For URLSession & Alamofire, the bug seems to come from the open-source version of the Foundation framework. 
+We thus log the bug also on the Swift open-source bug tracker.
 
 
 ### Windows note
