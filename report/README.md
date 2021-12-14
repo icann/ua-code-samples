@@ -6,9 +6,9 @@ This page describes the latest one.
 
 ## 2021 Test Run
 
-The [report](./UA-language-testing-20211201.docx) contains the information about the methodology used, the tested languages and libraries, conformance level of the libraries and recommendations for developers.
+The report \[[docx](./UA-language-testing-20211208.docx)\] \[[pdf](./UA-language-testing-20211208.pdf)\] contains the information about the methodology used, the tested languages and libraries, conformance level of the libraries and recommendations for developers.
 
-There is also a PowerPoint [presentation](./UA-language-testing-20210920.pptx).
+There is also a PowerPoint presentation \[[pptx](./UA-language-testing-20211214.pptx)\] \[[pdf](./UA-language-testing-20211214.pdf)\].
 
 The UA conformance detailed results are breakdown by platforms:
 
