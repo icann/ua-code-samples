@@ -1,4 +1,4 @@
-# Universal Acceptance: Conformance Testing of Librairies and Languages
+# Universal Acceptance: Conformance Testing of Libraries and Languages
 
 This set of pages describes the work done by Cofomo on testing Programming languages and libraries against the Universal Acceptance compliance requirements. 
 Three series of tests were executed: one in 2018, one in 2020 and another on 2021. 
@@ -21,24 +21,25 @@ The UA conformance detailed results are breakdown by platforms:
 
 Here are the bug reports for each of the non-compliant tested libraries:
 
-| Language | Platform | Library | Report | Resolution |
-|---|---|---|---|---|
-| Swift | iOS | MessageUI | [StackOverflow report](https://stackoverflow.com/questions/69213585/mfmailcomposeviewcontroller-not-displaying-recipients-for-internationalized-emai) | No answer yet |
-| Swift | iOS | URLSession & Alamofire | [StackOverflow report](https://stackoverflow.com/questions/69945768/swift-url-returns-nil-when-the-url-contains-an-internationalized-domain-name-id) | Being discussed |
-| Swift | iOS | URLSession & Alamofire | [Bug report on Swift bugtracker](https://bugs.swift.org/browse/SR-15487) | Assigned to a maintainer |
-| PHP | Windows | mail | [Bug report on RFC6531 compliance](https://bugs.php.net/bug.php?id=81615) | Changed to feature request. Few chances that it would be implemented |
-| PHP | Windows | cURL | [Bug report on IDNA 2008 compliance](https://bugs.php.net/bug.php?id=81616) | This is a Windows issue |
-| PHP | Windows & Linux | intl | [Bug report on IDNA 2008 compliance](https://bugs.php.net/bug.php?id=81628) | This is a ICU issue |
-| PHP | Windows & Linux | PHP Mailer  | [Bug report for IDNA 2008 compliance](https://github.com/PHPMailer/PHPMailer/issues/2563) | Pull request submitted and merged upstream |
-| PHP | Windows & Linux | Symfony HttpClient  | [Bug report on IDNA 2008 compliance](https://github.com/symfony/symfony/issues/44091)  | Pull request submitted and merged upstream |
-| PHP | Windows & Linux | Symfony Mailer  | [Bug report on IDNA 2008 compliance](https://github.com/symfony/symfony/issues/44092) | Pull request submitted and merged upstream |
-| PHP | Windows & Linux | Symfony Mailer  | [Bug report on RFC5322 compliance](https://github.com/symfony/symfony/issues/44094) | Being discussed |
-| PHP | Windows & Linux | Symfony Mailer  | [Bug report on RFC6531 compliance](https://github.com/symfony/symfony/issues/44136) | No answer yet |
-| Kotlin | Android | Jakarta Mail | [Bug report on RFC6531 compliance](https://github.com/eclipse-ee4j/mail/issues/589) | No answer yet |
-| Kotlin | Android | HttpUrlConnection | [Bug report on IDNA 2008 compliance](https://issuetracker.google.com/issues/206015971) | Transmitted to the engineering teams |
-| Kotlin | Android | OkHttp | [Bug report on IDNA 2008 compliance](https://github.com/square/okhttp/issues/6910) | Closed after Q&A as IDNA 2008 is not uniformly supported or implemented by clients and servers |
-| Kotlin | Android | Fuel | [Bug report on IDNA 2008 compliance](https://github.com/kittinunf/fuel/issues/819) | Pull request submitted and pending to be merged upstream |
-| Kotlin | Android | Apache HttpClient | [Apache HttpClient](https://issues.apache.org/jira/browse/HTTPCLIENT-2185) | No answer yet |
+| Language | Platform | Library | Report | Resolution | Notes |
+|---|---|---|---|---|---|
+| Swift | iOS | MessageUI | [StackOverflow report](https://stackoverflow.com/questions/69213585/mfmailcomposeviewcontroller-not-displaying-recipients-for-internationalized-emai) | No answer yet | Bug has been reported on Apple's bug reporting tool but link is private. See [iOS note below](#ios-note) |
+| Swift | iOS | URLSession & Alamofire | [StackOverflow report](https://stackoverflow.com/questions/69945768/swift-url-returns-nil-when-the-url-contains-an-internationalized-domain-name-id) | Being discussed | Bug has been reported on Apple's bug reporting tool but link is private |
+| Swift | iOS | URLSession & Alamofire | [Bug report on Swift bugtracker](https://bugs.swift.org/browse/SR-15487) | Assigned to a maintainer | |
+| PHP | Windows | mail | [Bug report on RFC6531 compliance](https://bugs.php.net/bug.php?id=81615) | Changed to feature request | There is very few chances that it would be implemented |
+| PHP | Windows | cURL | [Bug report on IDNA 2008 compliance](https://bugs.php.net/bug.php?id=81616) | This is a Windows issue | The library used for IDN conversions is a windows version that is only IDNA2003 compliant |
+| PHP | Windows | cURL | [Bug report on IDN 2008 compliance](https://aka.ms/AAeuxwu) | No answer yet | Windows feedback hub report, as PHP maintainers stated that the issue came from Windows |
+| PHP | Windows & Linux | intl | [Bug report on IDNA 2008 compliance](https://bugs.php.net/bug.php?id=81628) | Suspended as this is an ICU issue | Unicode ICU library implements IDNA2008 according to UTS #46, see their [documentation](https://unicode-org.github.io/icu-docs/apidoc/dev/icu4c/uidna_8h.html#details) |
+| PHP | Windows & Linux | PHP Mailer  | [Bug report for IDNA 2008 compliance](https://github.com/PHPMailer/PHPMailer/issues/2563) | Pull request submitted and merged upstream | |
+| PHP | Windows & Linux | Symfony HttpClient  | [Bug report on IDNA 2008 compliance](https://github.com/symfony/symfony/issues/44091) | Pull request submitted and merged upstream | |
+| PHP | Windows & Linux | Symfony Mailer  | [Bug report on IDNA 2008 compliance](https://github.com/symfony/symfony/issues/44092) | Pull request submitted and merged upstream | |
+| PHP | Windows & Linux | Symfony Mailer  | [Bug report on RFC5322 compliance](https://github.com/symfony/symfony/issues/44094) | Being discussed | |
+| PHP | Windows & Linux | Symfony Mailer  | [Bug report on RFC6531 compliance](https://github.com/symfony/symfony/issues/44136) | No answer yet | |
+| Kotlin | Android | Jakarta Mail | [Bug report on RFC6531 compliance](https://github.com/eclipse-ee4j/mail/issues/589) | No answer yet | |
+| Kotlin | Android | HttpUrlConnection | [Bug report on IDNA 2008 compliance](https://issuetracker.google.com/issues/206015971) | Transmitted to the engineering teams | |
+| Kotlin | Android | OkHttp | [Bug report on IDNA 2008 compliance](https://github.com/square/okhttp/issues/6910) | Closed after Q&A | Maintainer closed it "as the strictness of IDNA 2008 is likely to cause more visible issues than this solves, particularly as this isn't uniformly supported or implemented by clients and servers". While major actor in the industry will stick to IDNA 2003 (e.g. Chrome browser) this is not likely to change. |
+| Kotlin | Android | Fuel | [Bug report on IDNA 2008 compliance](https://github.com/kittinunf/fuel/issues/819) | Pull request submitted and pending to be merged upstream | |
+| Kotlin | Android | Apache HttpClient | [Apache HttpClient](https://issues.apache.org/jira/browse/HTTPCLIENT-2185) | No answer yet | |
 
 
 ### iOS note
