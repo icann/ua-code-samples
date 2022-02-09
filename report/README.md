@@ -8,7 +8,7 @@ This page describes the latest one.
 
 The report \[[docx](./UA-language-testing-20211208.docx)\] \[[pdf](./UA-language-testing-20211208.pdf)\] contains the information about the methodology used, the tested languages and libraries, conformance level of the libraries and recommendations for developers.
 
-There is also a PowerPoint presentation \[[pptx](./UA-language-testing-20220105.pptx)\] \[[pdf](./UA-language-testing-20220105.pdf)\].
+There is also a PowerPoint presentation \[[pptx](./UA-language-testing-20220209.pptx)\] \[[pdf](./UA-language-testing-20220209.pdf)\].
 
 The UA conformance detailed results are breakdown by platforms:
 
