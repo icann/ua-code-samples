@@ -1,0 +1,4 @@
+rootProject.name = 'ua-sample-code-web'
+
+include 'ua-sample-code-lib'
+project(':ua-sample-code-lib').projectDir = file('../ua-sample-code-lib')

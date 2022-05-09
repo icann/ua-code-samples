@@ -39,7 +39,7 @@ class JakartaMailSmtpRequestSample(context: Context) : SmtpRequestSample(context
         } catch (ex: Exception) {
             val localPart = emailCompliant.substringBeforeLast("@")
             val domain = emailCompliant.substringAfterLast("@")
-            // Jakarta if domain is not normalized
+            // Email address with domain normalized
             emailCompliant = "$localPart@${Normalizer.normalize(domain, Normalizer.Form.NFC)}"
         }
 
@@ -47,9 +47,9 @@ class JakartaMailSmtpRequestSample(context: Context) : SmtpRequestSample(context
             val internetAddress = InternetAddress(emailCompliant)
             internetAddress.validate()
         } catch (e: Exception) {
+            // Email address is still rejected, convert domain to A-label
             val localPart = emailCompliant.substringBeforeLast("@")
             val domain = emailCompliant.substringAfterLast("@")
-            // Email address is still rejected, convert domain to A-label
             try {
                 emailCompliant = "$localPart@${IDNAUtils.domainToAscii(domain)}"
             } catch (ex: Exception) {
@@ -67,11 +67,15 @@ class JakartaMailSmtpRequestSample(context: Context) : SmtpRequestSample(context
 
         return try {
             val msg = MimeMessage(session)
+            //set message headers for internationalized content
+            msg.addHeader("Content-type", "text/HTML; charset=UTF-8")
+            msg.addHeader("Content-Transfer-Encoding", "8bit")
+            msg.addHeader("format", "flowed")
             msg.setFrom("no-reply@eai.test")
             msg.setRecipients(Message.RecipientType.TO, emailCompliant)
             msg.subject = subject
             msg.sentDate = Date()
-            msg.setText(body)
+            msg.setText(body, "UTF-8")
             Transport.send(msg)
             "Message sent to $email"
         } catch (ex: Exception) {

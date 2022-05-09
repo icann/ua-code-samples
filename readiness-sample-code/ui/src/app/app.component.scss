@@ -1,0 +1,97 @@
+mat-sidenav-container {
+  height: 100%;
+  mat-icon {
+    transform: scale(1.4);
+  }
+  label {
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .close-sidenav {
+    margin: 8px;
+  }
+}
+
+.settings {
+  margin: 56px 32px;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.right {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 100%;
+  white-space: pre-wrap !important;
+
+  @media screen and (max-width: 600px)  {
+    font-size: 12px;
+  }
+}
+
+.right mat-icon {
+  margin-left: 24px;
+  transform: scale(2);
+}
+
+.profile-form {
+  display: inline-block;
+  vertical-align:top;
+  margin-right: 24px;
+}
+
+.profile-form-field {
+  display: block;
+  min-width: 280px;
+  margin-bottom: 12px;
+}
+
+.register-btn {
+  min-width: 240px;
+}
+
+.form-and-output {
+  margin: 40px 24px;
+}
+
+.output {
+  border: gray solid thin;
+  min-width: 300px;
+  max-width: 500px;
+  min-height: 300px;
+  position: relative;
+  padding: 16px;
+  display: inline-block;
+  vertical-align:top;
+}
+
+#output-label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background-color: #fafafa;
+  padding: 0 8px;
+}
+
+mat-error {
+  max-width: 320px;
+}
+
+#submit {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

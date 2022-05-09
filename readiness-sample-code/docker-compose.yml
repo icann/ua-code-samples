@@ -1,0 +1,52 @@
+version: "3.4"
+
+services:
+  mailhog-eai:
+    container_name: mailhog-eai
+    image: mailhog:eai
+    build:
+      context: ./utils/mailhog-eai
+      dockerfile: ./Dockerfile
+    network_mode: "host"
+    restart: on-failure
+  ua-python:
+    container_name: ua-python
+    image: ua:python-backend
+    build:
+      context: ./python
+      dockerfile: ./Dockerfile
+    environment:
+      - SMTP_PORT=1025
+      - SMTP_HOST=localhost
+      - MAILHOG=http://localhost:8025
+    network_mode: "host"
+    restart: on-failure
+  ua-java:
+    container_name: ua-java
+    image: ua:java-backend
+    build:
+      context: ./java
+      dockerfile: ./Dockerfile
+    network_mode: "host"
+    restart: on-failure
+    environment:
+      - JAVA_OPTS=
+        -Dmailhog=http://localhost:8025
+        -DsmtpServer=localhost
+        -DsmtpPort=1025
+  ua-ui:
+    container_name: ua-ui
+    image: ua:ui-frontend
+    build:
+      context: ./ui
+      dockerfile: ./Dockerfile
+    network_mode: "host"
+    restart: on-failure
+  ua-javascript:
+    container_name: ua-javascript
+    image: ua:javascript-backend
+    build:
+      context: ./javascript
+      dockerfile: ./Dockerfile
+    network_mode: "host"
+    restart: on-failure

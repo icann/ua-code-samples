@@ -1,15 +1,28 @@
 # PHP Universal Compliance code samples
 
 The following folder contains code samples to provide guidelines for Universal Acceptance (UA) for
-many PHP libraries.
+PHP libraries.
 
 The sources are in the `src` folder and are split in two use cases: HTTP and SMTP requests.
 
-The idea is to be able to make HTTP request with any IDNA 2008 compliant domain name and SMTP
-request with any EAI.
-
 The following paragraphs lists the libraries that are tested, how to launch the PHP scripts to make
 your own tests and some additional information as remaining issues.
+
+## Preparing your environment
+
+Install PHP, `php-intl` module and `composer` on your environment.
+To install dependencies run:
+
+    $ composer install
+
+To get the newest libraries' versions you can do
+
+    $ composer update
+
+In `php.ini` uncomment both lines:
+
+    extension=curl
+    extension=intl
 
 ## HTTP Clients
 

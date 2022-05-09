@@ -1,0 +1,134 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" #sidenav opened>
+    <button class="close-sidenav" mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>close</mat-icon>
+    </button>
+    <form class="settings">
+      <label id="language">Which programming Language do you want to test?</label>
+      <mat-radio-group
+        aria-labelledby="language"
+        class="example-radio-group"
+        name="language"
+        (change)="reset()"
+        [(ngModel)]="selectedLanguage">
+        <mat-radio-button class="example-radio-button" *ngFor="let language of languages" [value]="language">
+          {{language}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <ng-container *ngIf="selectedLanguage && websiteValidators[selectedLanguage].length">
+        <label id="website-validation">The website domain will be validated against?</label>
+        <mat-radio-group
+          aria-labelledby="website-validation"
+          class="example-radio-group"
+          name="websiteValidator"
+          [(ngModel)]="selectedWebsiteValidator">
+          <mat-radio-button class="example-radio-button" *ngFor="let validator of websiteValidators[selectedLanguage]"
+                            [value]="validator">
+            {{validator}}
+          </mat-radio-button>
+        </mat-radio-group>
+      </ng-container>
+
+      <label id="website-conversion">The website domain will be converted using?</label>
+      <mat-radio-group
+        *ngIf="selectedLanguage"
+        aria-labelledby="website-conversion"
+        class="example-radio-group"
+        name="websiteConverter"
+        [(ngModel)]="selectedWebsiteConverter">
+        <mat-radio-button class="example-radio-button" *ngFor="let converter of websiteConverters[selectedLanguage]"
+                          [value]="converter">
+          {{converter}}
+        </mat-radio-button>
+      </mat-radio-group>
+
+      <label id="email-validation">The email will be validated against?</label>
+      <mat-radio-group
+        *ngIf="selectedLanguage"
+        aria-labelledby="email-validation"
+        class="example-radio-group"
+        name="emailValidator"
+        [(ngModel)]="selectedEmailValidators">
+        <mat-radio-button class="example-radio-button" *ngFor="let validator of emailValidators[selectedLanguage]"
+                          [value]="validator">
+          {{validator}}
+        </mat-radio-button>
+      </mat-radio-group>
+
+      <label id="email-sending">The email will be sent with?</label>
+      <mat-radio-group
+        *ngIf="selectedLanguage"
+        aria-labelledby="email-sending"
+        class="example-radio-group"
+        name="emailSender"
+        [(ngModel)]="selectedEmailSender">
+        <mat-radio-button class="example-radio-button" *ngFor="let sender of emailSenders[selectedLanguage]"
+                          [value]="sender">
+          {{sender}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </form>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>settings</mat-icon>
+      </button>
+
+      <div class="right">
+        <span>Showcasing Universal Acceptance Readiness of Programming Languages</span>
+        <a href="https://www.icann.org/ua" [style.color]="'black'">
+          <mat-icon>language</mat-icon>
+        </a>
+      </div>
+
+    </mat-toolbar>
+
+    <div class="form-and-output">
+
+      <form [formGroup]="profileForm" class="profile-form" (ngSubmit)="onRegister()">
+        <mat-form-field class="profile-form-field">
+          <mat-label>Name</mat-label>
+          <input name="username" formControlName="username" matInput>
+        </mat-form-field>
+        <mat-form-field class="profile-form-field">
+          <mat-label>Email</mat-label>
+          <input name="email" type="email" formControlName="email" matInput>
+          <mat-error *ngIf="profileForm.get('email')?.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-error *ngIf="email?.hasError('emailBackendError') && email?.touched">
+          <div *ngFor="let message of emailBackendError" [innerHTML]="message | safe:'html'"></div>
+        </mat-error>
+        <mat-form-field class="profile-form-field">
+          <mat-label> Personal Website</mat-label>
+          <input name="website" type="url" formControlName="website" matInput>
+          <mat-error *ngIf="profileForm.get('website')?.hasError('required')">
+            Website is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="profileForm.get('website')?.hasError('invalidUrl')">
+            Invalid url
+          </mat-error>
+        </mat-form-field>
+        <mat-error *ngIf="website?.hasError('websiteBackendError') && website?.touched">
+          <div *ngFor="let message of websiteBackendError" [innerHTML]="message | safe:'html'"></div>
+        </mat-error>
+
+        <div id="submit">
+          <button mat-raised-button color="primary" class="register-btn">REGISTER</button>
+          <mat-spinner [diameter]="25" *ngIf="loading"></mat-spinner>
+        </div>
+
+      </form>
+
+      <div class="output">
+        <span id="output-label">OUTPUT</span>
+        <div *ngFor="let message of output" [innerHTML]="message | safe:'html'"></div>
+      </div>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

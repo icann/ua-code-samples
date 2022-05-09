@@ -1,0 +1,19 @@
+version: "3.4"
+
+services:
+  ua-backend-javascript:
+    container_name: ua-backend-javascript
+    image: ua-backend-javascript
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "3000:3000"
+    links:
+      - mailhog
+  mailhog: # http server to answer http requests
+    container_name: mailhog
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
+      - "1025:1025"

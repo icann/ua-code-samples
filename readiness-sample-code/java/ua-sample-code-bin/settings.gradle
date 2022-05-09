@@ -1,0 +1,9 @@
+rootProject.name = 'ua-sample-code-bin'
+
+include('ua-sample-code-lib',
+        'ua-cli-runners',
+        'icu4j-sample',
+        'common-validator-idn-sample',
+        'common-validator-eai-sample',
+        'jakarta-mail-sample')
+project(':ua-sample-code-lib').projectDir = file('../ua-sample-code-lib')

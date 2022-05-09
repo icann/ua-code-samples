@@ -1,0 +1,22 @@
+plugins {
+    id 'java-library'
+}
+
+group 'com.cofomo'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'commons-validator:commons-validator:1.7'
+    implementation 'com.ibm.icu:icu4j:70.1'
+    implementation 'com.google.guava:guava:31.0.1-jre'
+    implementation 'com.sun.mail:jakarta.mail:2.0.1'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
