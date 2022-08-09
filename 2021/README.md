@@ -1,10 +1,6 @@
-# Universal Acceptance: Conformance Testing of Libraries and Languages
+# Universal Acceptance 2021 Test Run: Conformance Testing of Libraries and Languages
 
-This set of pages describes the work done by Cofomo on testing Programming languages and libraries against the Universal Acceptance compliance requirements. 
-Three series of tests were executed: one in 2018, one in 2020 and another on 2021. 
-This page describes the latest one.
-
-## 2021 Test Run
+This page describes the work done by Cofomo in 2021 to test the compliance of some libraries & languages towards universal acceptance.
 
 The report \[[docx](./UA-language-testing-20211208.docx)\] \[[pdf](./UA-language-testing-20211208.pdf)\] contains the information about the methodology used, the tested languages and libraries, conformance level of the libraries and recommendations for developers.
 

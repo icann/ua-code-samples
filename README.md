@@ -5,7 +5,30 @@ internationalization, specifically email address
 internationalization ([EAI](https://datatracker.ietf.org/doc/html/rfc6530)) and internationalized domain
 names ([IDNA2008](https://datatracker.ietf.org/doc/html/rfc5890)).
 
-These code samples are the result of a comprehensive [reports on the libraries tested](./report/README.md).
+# 2021 Test Run
+
+2021 Test Run code samples are the result of a comprehensive report on the libraries tested [here](2021/README.md).
+This report targeted the following development environments:
+
+| Language | Platform |
+|----------|----------|
+| Swift    | iOS      |
+| Kotlin   | Android  |
+| PHP      | Windows  |
+| PHP      | Linux    |
+
+# 2022 Test Run
+
+2022 exercise takes a subset of a previous [2020 report made by Viagénie](https://viagenie.ca/ua):
+
+| Language   | Platform |
+|------------|----------|
+| Java       | Linux    |
+| Python     | Linux    |
+| Javascript | Linux    |
+
+and focuses more on showcasing how to use these libraries & languages while ensuring compliance with EAI & IDN protocols.
+The report, bug reports and complementary information are [here](2022/README.md).
 
 ## UA-Samples frontend
 
