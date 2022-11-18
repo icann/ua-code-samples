@@ -3,9 +3,9 @@
 This page describes the work done by Cofomo in 2022 to showcase the UA readiness of some libraries & languages by providing 
 compliant code samples with EAI & IDN protocols and by reporting bugs when needed.
 
-The report \[[pdf](./ua-code-samples-20220627.pdf)\] contains recommendations for developers and code samples but also discussions on the compliance level.
+The report \[[pdf](https://uasg.tech/download/uasg-043-ua-ready-code-samples-in-java-python-and-javascript-en)\] contains recommendations for developers and code samples but also discussions on the compliance level.
 
-There is also a PowerPoint presentation \[[pdf](ua-code-samples-presentation-20220809.pdf)\].
+There is also a PowerPoint presentation \[[pdf](https://uasg.tech/download/uasg-043a-ua-ready-code-samples-in-java-python-and-javascript-en)\].
 
 ## Bug Reports
 
