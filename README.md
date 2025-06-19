@@ -27,21 +27,29 @@ This report targeted the following development environments:
 | Python     | Linux    |
 | Javascript | Linux    |
 
-and focuses more on showcasing how to use these libraries & languages while ensuring compliance with EAI & IDN protocols.
+It focuses more on showcasing how to use these libraries and languages while ensuring compliance with EAI & IDN protocols.
 The report, bug reports and complementary information are [here](2022/README.md).
+
+# 2025 Test Run
+
+TODO: Explain the tests in 2025 was on JS libraries with the focus on linkification and email handling.
+
+| Language   | Platform |
+|------------|----------|
+| Javascript | Linux    |
 
 ## UA-Samples frontend
 
-In order to start the MVPs, please look at the instruction in the frontend component [here](./readiness-sample-code/ui/README.md)
+To start the MVPs, please look at the instruction in the frontend component [here](./readiness-sample-code/ui/README.md)
 
 ## Python sample backend project
 
-The python sample is available [here: readiness-sample-code/python](./readiness-sample-code/python/README.md).
+The Python sample is available [here: readiness-sample-code/python](./readiness-sample-code/python/README.md).
 
 ## Java sample backend project
 
 The Java sample is available [here: readiness-sample-code/java](./readiness-sample-code/java/README.md).
 
-## Javascript sample backend project
+## JavaScript sample backend project
 
-The Java sample is available [here: readiness-sample-code/javascript](./readiness-sample-code/javascript/README.md).
+The JavaScript sample is available [here: readiness-sample-code/javascript](./readiness-sample-code/javascript/README.md).

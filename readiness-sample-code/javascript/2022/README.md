@@ -14,7 +14,7 @@ The backend use the web [Express framework](https://expressjs.com/).
 
 Install dependencies with npm:
 
-    /javascript $ npm install
+    /javascript/2022 $ npm install
 
 Then start the backend typing:
 
