@@ -6,9 +6,6 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-ENV SMTP_HOST=localhost
-ENV SMTP_PORT=1025
-ENV MAILHOG=http://localhost:8025
 
 EXPOSE 3000
 

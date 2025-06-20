@@ -1,5 +1,5 @@
 services:
-  ua-backend-javascript:
+  ua-javascript-libraries:
     container_name: ua-javascript-libraries
     image: ua-javascript-libraries
     build:
@@ -7,11 +7,11 @@ services:
       dockerfile: ./Dockerfile
     ports:
       - "3000:3000"
-    links:
-      - mailhog
-  mailhog:
-    container_name: mailhog
-    image: mailhog/mailhog
+  greenmail:
+    container_name: greenmail
+    image: greenmail/standalone:latest
     ports:
-      - "8025:8025"
-      - "1025:1025"
+      - "3025:3025"
+      - "3143:3143"
+    environment:
+      GREENMAIL_USERS: password:test@localhost

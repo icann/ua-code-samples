@@ -10,6 +10,7 @@
     "express-handlebars": "8.0.3",
     "handlebars": "4.7.8",
     "imapflow": "1.0.187",
+    "mjml": "4.15.3",
     "mailparser": "3.7.2",
     "nodemailer": "7.0.3",
     "punycode": "2.3.1"

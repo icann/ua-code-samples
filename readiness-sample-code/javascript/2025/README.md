@@ -6,9 +6,9 @@ The following folder contains code samples to provide guidelines for Universal A
 
 Make sure you have NodeJS installed. Development has been made for NodeJS >= 24.
 
-## JavaScript Backend for UA Compliance Demo Website
+## JavaScript Libraries for UA Compliance Demo Website
 
-todo
+The backend uses the Express web framework.
 
 ### Setup
 
@@ -59,39 +59,34 @@ This should print:
     
         <body>
             <div>
-                <p>I am Alex, this is my email: <a href="mailto:atdesrochers@cofomo.com" target="_blank" rel="noopener noreferrer">atdesrochers@cofomo.com</a>.</p>
+                <p>I am Alexandre, this is my email: <a href="mailto:atdesrochers@cofomo.com" target="_blank" rel="noopener noreferrer">atdesrochers@cofomo.com</a>.</p>
             </div>
         </body>
     </html>
 
-#### Accessing Inbound Emails on a Mail Server
+#### Accessing Inbound Emails on a Mail Server & Processing Emails
 
-    TODO
-
-This should print:
-
-    TODO
-
-#### Processing Emails
-
-    TODO
+    curl -X POST localhost:3000/api/email/fetch -H 'Content-Type: application/json' -d '{"sender": "atdesrochers@cofomo.com"}'
 
 This should print:
 
-    TODO
+    {
+        "from": "atdesrochers@cofomo.com",
+        "to": "test@localhost",
+        "subject": "Test UA for Sending Emails",
+        "body": <The email content>
+    }
 
 #### Composing Emails for Sending
 
-    TODO
+    curl -X POST localhost:3000/api/email/create -H 'Content-Type: application/json' -d '{"text": "atdesrochers@cofomo.com"}'
 
-This should print:
-
-    TODO
+This should output the HTML content for the email.
 
 #### Sending Emails
 
-    TODO
+    curl -X POST localhost:3000/api/email/send -H 'Content-Type: application/json' -d '{"sender": "atdesrochers@cofomo.com"}'
 
 This should print:
 
-    TODO
+    Email has been sent successfully.
