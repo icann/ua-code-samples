@@ -1,0 +1,17 @@
+{
+  "name": "js-libraries",
+  "scripts": {
+    "start": "node ./bin/www",
+    "watch": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www"
+  },
+  "dependencies": {
+    "autolinker": "4.1.5",
+    "express": "5.1.0",
+    "express-handlebars": "8.0.3",
+    "handlebars": "4.7.8",
+    "imapflow": "1.0.187",
+    "mailparser": "3.7.2",
+    "nodemailer": "7.0.3",
+    "punycode": "2.3.1"
+  }
+}
